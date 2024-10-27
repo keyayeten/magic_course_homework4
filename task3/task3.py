@@ -5,7 +5,16 @@
 
 
 def find_most_frequent(filename):
-    pass
+    with open('text.txt', 'r', encoding='utf-8') as file:
+        a = file.read()
+        d = {}
+        for i in a.split():
+            d[i] = a.count(i)
+        sorts = dict(list(sorted(d.items(), key=lambda x: x[1], reverse=True))[:10])
+        return sorts
+
+
+find_most_frequent('text.txt')
 
 
 if __name__ == "__main__":
