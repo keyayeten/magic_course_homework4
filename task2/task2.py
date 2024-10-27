@@ -7,18 +7,30 @@ import os
 import random
 
 
-def create_drafts():
+def create_drafts(new_path: str):
     path = ""
-    if "task2" not in os.getcwd():
-        path = "task2//"
-    for i in range(random.randint(10, 20)):
-        with open(f"{path}file_{i}.draft", "w") as f:
+    os.chdir('task2')
+    os.makedirs(new_path, exist_ok = True)
+    if "stories" not in os.getcwd():
+        path = new_path + "//"
+    for i in range(random.randint(15, 20)):
+        with open(f"{path}file_{i}.draft", "w", encoding = 'utf-8') as f:
             f.write("Я ПЧЕЛА)))) ЖЖЖЖЖЖЖ")
 
 
-def delete_drafts():  # а тут уже ваш код
-    pass
+def delete_drafts(draft_list: list[str]):
+    os.chdir(new_path)
+    count = 0
+    for i in draft_list:
+        if '.draft' in i:
+            os.remove(i)
+            count += 1
+    return count
 
 
 if __name__ == "__main__":
-    create_drafts()
+    new_path = 'stories'
+    create_drafts(new_path)
+    draft_list = os.listdir(new_path)
+    count_del = delete_drafts(draft_list)
+    print(f'Удалено {count_del} файлов')
