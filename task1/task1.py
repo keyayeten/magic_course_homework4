@@ -7,3 +7,5 @@
 
 def create_library():
     pass
+
+create_library()
