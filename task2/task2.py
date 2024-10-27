@@ -17,8 +17,13 @@ def create_drafts():
 
 
 def delete_drafts():  # а тут уже ваш код
-    pass
+    directoria = os.getcwd()
+    for i in os.listdir(directoria):
+        if i.endswith('.draft'):
+            os.remove(os.path.join(directoria, i))
+    return directoria
 
 
 if __name__ == "__main__":
     create_drafts()
+    delete_drafts()
