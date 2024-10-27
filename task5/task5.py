@@ -2,10 +2,11 @@
 # с кулинарными рецептами. Напишите программу,
 # которая копирует файл recipes.txt в файл
 # recipes_backup.txt.
-
+from shutil import copy
 
 def copy_recipes(filename, new_filename):
-    pass
+    copy(filename, new_filename)
+
 
 
 if __name__ == "__main__":

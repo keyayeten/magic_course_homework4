@@ -17,8 +17,11 @@ def create_drafts():
 
 
 def delete_drafts():  # а тут уже ваш код
-    pass
-
+    f_list=os.listdir()
+    for f in f_list:
+        if f[-6:] =='.draft':
+            os.remove(f)
 
 if __name__ == "__main__":
     create_drafts()
+    delete_drafts()
