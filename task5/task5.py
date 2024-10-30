@@ -5,7 +5,11 @@
 
 
 def copy_recipes(filename, new_filename):
-    pass
+    with open(filename, "r", encoding="utf-8") as file:
+        data = file.read()
+
+    with open(backup_filename, "w", encoding="utf-8") as file:
+        file.write(data)
 
 
 if __name__ == "__main__":

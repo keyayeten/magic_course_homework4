@@ -16,9 +16,15 @@ def create_drafts():
             f.write("Я ПЧЕЛА)))) ЖЖЖЖЖЖЖ")
 
 
-def delete_drafts():  # а тут уже ваш код
-    pass
+def delete_drafts():
+    path = os.getcwd()
+    for files in os.listdir(path):
+        # if files == p.glob("*.draft"):  #glob - находит все файлы с указанным расширением удаление в модуде pathlib (* обязательна)
+        if files.endswith(".draft"):  #endswith - метод питона находит все файлы с указанным расширением
+            files_path = os.path.join(path, files)
+            os.remove(files_path)
 
 
 if __name__ == "__main__":
-    create_drafts()
+    # create_drafts()
+    delete_drafts()
