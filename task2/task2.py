@@ -9,16 +9,22 @@ import random
 
 def create_drafts():
     path = ""
-    if "task2" not in os.getcwd():
-        path = "task2//"
+    if "dz4" not in os.getcwd():
+        path = "dz4//"
     for i in range(random.randint(10, 20)):
         with open(f"{path}file_{i}.draft", "w") as f:
             f.write("Я ПЧЕЛА)))) ЖЖЖЖЖЖЖ")
 
 
-def delete_drafts():  # а тут уже ваш код
-    pass
-
-
 if __name__ == "__main__":
     create_drafts()
+
+
+import pathlib
+def delete_drafts():  
+    path = pathlib.Path("")
+    for file in path.iterdir():
+        if file.suffix == ".draft":
+            file.unlink()
+
+delete_drafts()

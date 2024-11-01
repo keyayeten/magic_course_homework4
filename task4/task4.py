@@ -4,8 +4,10 @@
 # чтобы убедиться, что ваша музыкальная коллекция
 # не потеряна.
 
+import pathlib
 def is_file_exist(filename: str):
-    pass
+    path = pathlib.Path("Playlist") / filename
+    return path.exists()
 
 
 if __name__ == "__main__":
