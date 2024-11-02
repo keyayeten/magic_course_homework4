@@ -17,8 +17,12 @@ def create_drafts():
 
 
 def delete_drafts():  # а тут уже ваш код
-    pass
+    files = os.listdir()
 
+    for file in files:
+        if file.endswith(".draft"):
+            os.remove(file)
 
 if __name__ == "__main__":
     create_drafts()
+    delete_drafts()
