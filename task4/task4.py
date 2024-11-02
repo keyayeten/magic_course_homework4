@@ -3,9 +3,17 @@
 # которая проверяет, существует ли этот файл,
 # чтобы убедиться, что ваша музыкальная коллекция
 # не потеряна.
+import os 
 
-def is_file_exist(filename: str):
-    pass
+def is_file_exist(filename: str) -> str:
+    """
+    Функция проверяет существует ли файл в текущей директории
+    """
+
+    if os.path.exists(filename):
+        return "Этот файл существует"  
+    else:
+        return "Этого файла не существует!"  
 
 
 if __name__ == "__main__":
