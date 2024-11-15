@@ -5,7 +5,7 @@
 # сначала можно запустить функцию для создания
 import os
 import random
-
+import pathlib
 
 def create_drafts():
     path = ""
@@ -17,7 +17,10 @@ def create_drafts():
 
 
 def delete_drafts():  # а тут уже ваш код
-    pass
+    path = pathlib.Path("")
+    for i in path.iterdir():
+        if i.suffix == ".draft" and i.is_file():
+            i.unlink()
 
 
 if __name__ == "__main__":

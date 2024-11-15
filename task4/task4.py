@@ -4,9 +4,14 @@
 # чтобы убедиться, что ваша музыкальная коллекция
 # не потеряна.
 
-def is_file_exist(filename: str):
-    pass
+from pathlib import Path
 
+def is_file_exist(filename: str):
+
+    with Path("favorite_playlist.txt") as file:
+        if file.is_file():
+            return True
+    return False
 
 if __name__ == "__main__":
     filename = "favorite_playlist.txt"

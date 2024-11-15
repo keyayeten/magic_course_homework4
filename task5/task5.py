@@ -3,10 +3,10 @@
 # которая копирует файл recipes.txt в файл
 # recipes_backup.txt.
 
+import shutil
 
 def copy_recipes(filename, new_filename):
-    pass
-
+    shutil.copy(filename, new_filename)
 
 if __name__ == "__main__":
     filename = "recipes.txt"
