@@ -5,7 +5,20 @@
 
 
 def find_most_frequent(filename):
-    pass
+    with open(filename, "r", encoding="utf-8") as f:
+        data = f.read().replace('\n', ' ').split(' ')
+    a = {}
+    for word in data:
+        if word in a:
+            a[word] += 1
+        else:
+            a[word] = 1
+    sorted_a = sorted(a.items(), key=lambda item: item[1], reverse=True)
+    max_10 = []
+    for i in range(10):
+        max_10.append(sorted_a[i][0])
+
+    return max_10
 
 
 if __name__ == "__main__":

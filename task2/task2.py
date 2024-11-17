@@ -17,8 +17,15 @@ def create_drafts():
 
 
 def delete_drafts():  # а тут уже ваш код
-    pass
+    if "task2" not in os.getcwd():
+        path = "task2//"
+    else:
+        path = os.getcwd()
+    for file in os.listdir(path):
+        if file.endswith('draft'):
+            os.remove(file)
 
 
 if __name__ == "__main__":
     create_drafts()
+    delete_drafts()
