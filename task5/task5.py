@@ -5,7 +5,10 @@
 
 
 def copy_recipes(filename, new_filename):
-    pass
+    with open(filename, "r", encoding="utf-8") as f:
+        data = f.read()
+    with open(new_filename, "w", encoding="utf-8") as f:
+        f.write(data)
 
 
 if __name__ == "__main__":
