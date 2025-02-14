@@ -3,9 +3,11 @@
 # которая проверяет, существует ли этот файл,
 # чтобы убедиться, что ваша музыкальная коллекция
 # не потеряна.
+import os
+
 
 def is_file_exist(filename: str):
-    pass
+    return filename in os.listdir()
 
 
 if __name__ == "__main__":

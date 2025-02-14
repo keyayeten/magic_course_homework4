@@ -6,6 +6,7 @@
 import os
 import random
 
+DRAFT_EXT = ".draft"
 
 def create_drafts():
     path = ""
@@ -16,9 +17,11 @@ def create_drafts():
             f.write("Я ПЧЕЛА)))) ЖЖЖЖЖЖЖ")
 
 
-def delete_drafts():  # а тут уже ваш код
-    pass
+def delete_drafts():
+    for file_name in os.listdir():
+        if os.path.isfile(file_name) and file_name.endswith(DRAFT_EXT):
+            os.remove(file_name)
 
 
 if __name__ == "__main__":
-    create_drafts()
+    delete_drafts()
